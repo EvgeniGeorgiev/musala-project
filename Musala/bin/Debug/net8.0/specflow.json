@@ -1,0 +1,19 @@
+{
+  "language": {
+    "feature": "en-US"
+  },
+  "bindingCulture": "en-US",
+  "stepDefinitionSkeletonStyle": "regexAttribute",
+  "generator": {
+    "allowDebugGeneratedFiles": true,
+    "allowedCompilerErrors": 0,
+    "consoleEncoding": "utf-8",
+    "forceOverwrite": false,
+    "basePath": "Tests",
+    "jsonOutputPath": "Tests",
+    "trace": false,
+    "dependencies": {
+      "injection": true
+    }
+  }
+}
