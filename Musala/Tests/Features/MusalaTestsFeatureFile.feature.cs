@@ -72,7 +72,7 @@ namespace Musala.Tests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify invalid email address validation on Contact Us page")]
-        [NUnit.Framework.TestCaseAttribute("The e-mail address entered is invalid.", null)]
+        [NUnit.Framework.TestCaseAttribute("Email:The e-mail address entered is invalid.", null)]
         public void VerifyInvalidEmailAddressValidationOnContactUsPage(string errorMessage, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
@@ -91,7 +91,7 @@ namespace Musala.Tests.Features
                 testRunner.When("the user goes to Contact Us from the landing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
                 testRunner.And("the user populates the Contact Us dialog with wrong email data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
                 testRunner.And("the user clicks the Send button in the Contact Us dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-                testRunner.Then(string.Format("an error message \'{0}\' appears in the Contact Us dialog", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                testRunner.Then(string.Format("an error messages for \'{0}\' appear in the dialog", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             }
             this.ScenarioCleanup();
         }
@@ -124,12 +124,19 @@ namespace Musala.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify Leadership section and company Facebook page link3333")]
-        public void VerifyLeadershipSectionAndCompanyFacebookPageLink3333()
+        [NUnit.Framework.DescriptionAttribute("Verify validation error messages on Join Us dialog")]
+        [NUnit.Framework.TestCaseAttribute("asd,asd@asd,123123,..\\..\\..\\CV.doc,asd", "Email:The e-mail address entered is invalid.", "One or more fields have an error. Please check and try again.", null)]
+        [NUnit.Framework.TestCaseAttribute("Name,Email,Mobile,,", "Email:The e-mail address entered is invalid.,Phone:The telephone number is invali" +
+            "d.", "One or more fields have an error. Please check and try again.", null)]
+        [NUnit.Framework.TestCaseAttribute(",Email@abv.bg,,,Hello", "Name:The field is required.,Phone:The field is required.", "One or more fields have an error. Please check and try again.", null)]
+        public void VerifyValidationErrorMessagesOnJoinUsDialog(string data, string message, string generalMessage, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Leadership section and company Facebook page link3333", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            argumentsOfScenario.Add("Data", data);
+            argumentsOfScenario.Add("Message", message);
+            argumentsOfScenario.Add("GeneralMessage", generalMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify validation error messages on Join Us dialog", null, tagsOfScenario, argumentsOfScenario, featureTags);
             this.ScenarioInitialize(scenarioInfo);
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -140,7 +147,42 @@ namespace Musala.Tests.Features
                 this.ScenarioStart();
                 testRunner.Given("the user is on the landing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
                 testRunner.When("the user selects \'Careers\' section in the top navigation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                testRunner.When("the user clicks ‘Check our open positions’ button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
                 testRunner.Then("the user verifies \'https://www.musala.com/careers/join-us/\' is the expected URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                testRunner.When("the user selects \'Anywhere\' in the Location Filter on Join Us page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                testRunner.When("the user selects \'Automation QA Engineer\' position from the list on Join Us page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                testRunner.Then("the user verifies there is a \'General description,Requirements,Responsibilities,W" +
+                        "hat we offer\' section shown in the Job page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                testRunner.Then("Apply CTA is present on the Job page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                testRunner.When("the user clicks Apply CTA on the Job page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                testRunner.When(string.Format("the user populates Apply For form with \'{0}\'", data), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                testRunner.Then(string.Format("an error messages for \'{0}\' appear in the dialog", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                testRunner.When("the user clicks Send CTA in the Apply Form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                testRunner.Then(string.Format("an error messages for \'{0}\' appear in the dialog", generalMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Return list of available positions by city")]
+        public void ReturnListOfAvailablePositionsByCity()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Return list of available positions by city", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            this.ScenarioInitialize(scenarioInfo);
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                testRunner.Given("the user is on the landing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+                testRunner.When("the user selects \'Careers\' section in the top navigation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                testRunner.When("the user clicks ‘Check our open positions’ button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                testRunner.Then("Print all available positions for \'Bulgaria\' location", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                testRunner.Then("Print all available positions for \'Egypt\' location", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             }
             this.ScenarioCleanup();
         }

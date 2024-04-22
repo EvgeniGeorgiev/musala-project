@@ -112,6 +112,7 @@ D:\Work\Musala\Musala\Musala\obj\Debug\net8.0\Musala.GeneratedMSBuildEditorConfi
 D:\Work\Musala\Musala\Musala\obj\Debug\net8.0\Musala.AssemblyInfoInputs.cache
 D:\Work\Musala\Musala\Musala\obj\Debug\net8.0\Musala.AssemblyInfo.cs
 D:\Work\Musala\Musala\Musala\obj\Debug\net8.0\Musala.csproj.CoreCompileInputs.cache
+D:\Work\Musala\Musala\Musala\obj\Debug\net8.0\Musala.sourcelink.json
 D:\Work\Musala\Musala\Musala\obj\Debug\net8.0\Musala.csproj.CopyComplete
 D:\Work\Musala\Musala\Musala\obj\Debug\net8.0\Musala.dll
 D:\Work\Musala\Musala\Musala\obj\Debug\net8.0\refint\Musala.dll

@@ -18,7 +18,6 @@ public class CompanyPageInteractions(CompanyPage companyPage)
 
     internal void ClickCompanyFacebookIcon()
     {
-        _companyPage.AcceptCookies();
         _companyPage.ClickCompanyFacebookIcon();
         _companyPage.SwitchToNextTab();
         _companyPage.WaitForAjaxToComplete();

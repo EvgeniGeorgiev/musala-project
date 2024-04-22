@@ -20,6 +20,10 @@ public class GlobalPage
     {
         webDriver.FindElement(AcceptCookiesCTA).Click();
     }
+    internal void Click(By element)
+    {
+        webDriver.FindElement(element).Click();
+    }
 
     public void WaitForAjaxToComplete()
     {
@@ -69,5 +73,21 @@ public class GlobalPage
                 }
             }
         }
+    }
+
+    internal void ClickElementFromListByText(By locator, string option)
+    {
+        bool wasAnOptionClicked = false;
+        IReadOnlyCollection<IWebElement> elements = new List<IWebElement>(webDriver.FindElements(locator));
+        foreach (var element in elements)
+        {
+            if (option == element.Text)
+            {
+                element.Click();
+                wasAnOptionClicked = true;
+                break;
+            }
+        }
+        if (!wasAnOptionClicked) { throw new Exception("No element with text "+ option + " found. "); }
     }
 }

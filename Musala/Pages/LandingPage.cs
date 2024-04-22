@@ -35,7 +35,7 @@ public class LandingPage : GlobalPage
 
     internal void PopulateContactUsDialogWithWrongEmailData()
     {
-        List<IWebElement> data = new List<IWebElement>(webDriver.FindElements(ContactUsFields));
+        IReadOnlyCollection<IWebElement> data = new List<IWebElement>(webDriver.FindElements(ContactUsFields));
 
 
         foreach (var element in data)
