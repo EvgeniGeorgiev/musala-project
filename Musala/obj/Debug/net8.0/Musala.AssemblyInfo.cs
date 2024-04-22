@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Musala")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b95315cc25aa1fc6f2b669d5d54d55799a3e6c5f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d0fec29c99f7b2764ab827625bdfb2cf0c4194a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Musala")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Musala")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
