@@ -2,7 +2,10 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using System.Configuration;
 using TechTalk.SpecFlow;
+using static ConfigurationSettings;
 
 [Binding]
 public class Hooks
@@ -26,8 +29,20 @@ public class Hooks
     [BeforeScenario]
     public static void BeforeScenario()
     {
-        driver = new ChromeDriver(); 
-
+        TestConfig config = ConfigurationSettings.GetConfig();
+        
+        if (config.Browser.ToLower() == "chrome")
+        {
+            driver = new ChromeDriver();
+        }
+        else if (config.Browser.ToLower() == "firefox")
+        {
+            driver = new FirefoxDriver();
+        }
+        else
+        {
+            throw new Exception("Unsupported browser: " + config.Browser);
+        }
     }
 
     [AfterScenario]
@@ -38,8 +53,13 @@ public class Hooks
         if (_scenarioContext.TestError != null)
         {
             var error = _scenarioContext.TestError;
-            Console.WriteLine("An error ocurred:" + error.Message);
-            Console.WriteLine("It was of type:" + error.GetType().Name);
+            Console.WriteLine("An error occurred: " + error.Message);
+            Console.WriteLine("It was of type: " + error.GetType().Name);
+            test.Fail("Test failed: " + error.Message);
+        }
+        else
+        {
+            test.Pass("Test passed.");
         }
 
         extent.Flush();

@@ -15,5 +15,13 @@
     "dependencies": {
       "injection": true
     }
+  },
+  "execution": {
+    "stopAfterFailures": 0,
+    "retryFor": "None",
+    "testThreadCount": 2,
+    "filter": {
+      "tags": "parallel"
+    }
   }
 }

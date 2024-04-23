@@ -1,15 +1,10 @@
 ﻿Feature: Musala Tests
 
 
-#Design your framework to support two browsers – chrome and firefox. Make the browser selection available from a configuration file.
-#Store the base URL (http://www.musala.com/) in the configuration file
-#Add a possibility the tests below to be executed in parallel simultaneously
 #For Test Case 1 – prepare a test data file in a format of your choice, the file must contain 5 sets of invalid e-mail addresses. Implement the test to run 5 times with each e-mail address.
-#Provide a report for the test runs 
-#Add a README file
+
 
 ######
-
 Scenario Outline: Verify invalid email address validation on Contact Us page
 
 Given the user is on the landing page
@@ -23,7 +18,6 @@ Then an error messages for '<Error Message>' appear in the dialog
     |Email:The e-mail address entered is invalid. | 
 
 
-
 Scenario Outline: Verify Leadership section and company Facebook page link
 
 Given the user is on the landing page
@@ -33,7 +27,6 @@ Then the user verifies there is a Leadership section
 When the user clicks Facebook link from the footer
 Then the user verifies 'https://www.facebook.com/MusalaSoft?fref=ts' is the expected URL
 Then the Musala Soft profile picture appears on the Facebook page
-
 
 
 Scenario Outline: Verify validation error messages on Join Us dialog
@@ -59,7 +52,7 @@ Then an error messages for '<GeneralMessage>' appear in the dialog
     | ,Email@abv.bg,,,Hello                     | Name:The field is required.,Phone:The field is required.                            | One or more fields have an error. Please check and try again. |
 
 
-
+@parallel
 Scenario Outline: Return list of available positions by city
 
 Given the user is on the landing page

@@ -3,6 +3,7 @@ using NUnit.Framework;
 using NUnit.Framework.Legacy;
 using OpenQA.Selenium;
 using System.Data;
+using System.Net.Mail;
 using TechTalk.SpecFlow;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -50,6 +51,7 @@ public class MusalaTestSteps
         Thread.Sleep(5000);
     }
 
+    //ToDo
     [Then(@"an error message '(.*)' appears in the Contact Us dialog")]
     public void AnErrorMessageAppearsInTheContactUsDialog(string expectedErrorMessage)
     {
@@ -61,6 +63,7 @@ public class MusalaTestSteps
 
         ClassicAssert.AreEqual(expectedErrorMessage, emailValidationErrorMessage, $"Expected error message '{expectedErrorMessage}' but got '{emailValidationErrorMessage}'.");
         ClassicAssert.AreEqual(someGeneralError, dialogValidationErrorMessage, $"Expected error message '{someGeneralError}' but got '{dialogValidationErrorMessage}'.");
+
     }
 
     [When(@"the user selects '(.*)' section in the top navigation")]

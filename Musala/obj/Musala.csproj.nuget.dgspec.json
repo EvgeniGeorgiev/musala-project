@@ -68,6 +68,10 @@
               "target": "Package",
               "version": "[123.0.6312.122, )"
             },
+            "Selenium.WebDriver.GeckoDriver": {
+              "target": "Package",
+              "version": "[0.34.0, )"
+            },
             "SpecFlow": {
               "target": "Package",
               "version": "[3.9.74, )"

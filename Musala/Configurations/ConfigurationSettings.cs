@@ -1,11 +1,25 @@
-﻿using System.Configuration;
+﻿using Newtonsoft.Json;
+using System.Configuration;
 
 public class ConfigurationSettings
 {
+    public class TestConfig
+    {
+        public required string Browser { get; set; }
+        public required string BaseUrl { get; set; }
+
+    }
+
+    public static TestConfig GetConfig()
+    {
+        string json = System.IO.File.ReadAllText(Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory() + "\\..\\..\\..\\config.json")));
+        return JsonConvert.DeserializeObject<TestConfig>(json);
+    }
+
     public static string GetBaseUrl()
     {
-        //return ConfigurationManager.AppSettings["BaseUrl"];
-        string configvalue1 = ConfigurationManager.AppSettings["BaseUrl"];
-        return configvalue1;
+        TestConfig config = ConfigurationSettings.GetConfig();
+        return config.BaseUrl;
     }
+
 }

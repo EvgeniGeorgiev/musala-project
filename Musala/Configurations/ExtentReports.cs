@@ -4,8 +4,8 @@ using AventStack.ExtentReports.Reporter;
 
 public class ExtentManager
 {
-    public static ExtentReports extent;
-    public static ExtentSparkReporter htmlReporter;
+    private static ExtentReports extent;
+    private static ExtentSparkReporter htmlReporter;
 
     public static ExtentReports GetExtent()
     {
