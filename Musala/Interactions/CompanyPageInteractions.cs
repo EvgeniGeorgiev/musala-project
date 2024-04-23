@@ -1,9 +1,4 @@
-﻿
-
-using NUnit.Framework.Legacy;
-using System;
-
-public class CompanyPageInteractions(CompanyPage companyPage)
+﻿public class CompanyPageInteractions(CompanyPage companyPage)
 {
     private readonly CompanyPage _companyPage = companyPage;
 

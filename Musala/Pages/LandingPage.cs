@@ -32,49 +32,4 @@ public class LandingPage : GlobalPage
     {
         return webDriver.FindElement(DialogValidationMessage).GetAttribute("textContent");
     }
-
-    internal void PopulateContactUsDialogWithWrongEmailData()
-    {
-        IReadOnlyCollection<IWebElement> data = new List<IWebElement>(webDriver.FindElements(ContactUsFields));
-
-
-        foreach (var element in data)
-        {
-            IWebElement label = element.FindElement(By.CssSelector("label"));
-            IWebElement input;
-
-            try
-            {
-                input = element.FindElement(By.CssSelector("input"));
-            }
-            catch (NoSuchElementException)
-            {
-                input = element.FindElement(By.CssSelector("textarea"));
-            }
-
-            string labelText = label.Text;
-
-            //ToDo: No hardcoded data in Page class!!!
-            if (labelText == "Name*")
-            {
-                input.SendKeys("Name");
-            }
-            if (labelText == "Email*")
-            {
-                input.SendKeys("Email");
-            }
-            if (labelText == "Mobile")
-            {
-                input.SendKeys("0878555555");
-            }
-            if (labelText == "Subject*")
-            {
-                input.SendKeys("Subject");
-            }
-            if (labelText == "Your Message*")
-            {
-                input.SendKeys("My Message");
-            }
-        }
-    }
 }

@@ -1,10 +1,5 @@
-﻿using AngleSharp.Text;
-using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using System;
-using System.Xml.Linq;
-using TechTalk.SpecFlow;
 
 public class CareersPage : GlobalPage
 {
@@ -22,12 +17,9 @@ public class CareersPage : GlobalPage
 
     internal void ClickApplyCTAOnJobPage()
     {
-        //ToDo: Manage Consent element intercepts click when not on full screen.
         Actions actions = new Actions(webDriver);
         actions.ScrollByAmount(0, 500).Perform();
         webDriver.FindElement(ApplyCTA).Click();
-
-        //Click(ApplyCTA);
     }
 
     internal void ClickCheckOurOpenPositionsCTA()
@@ -49,7 +41,7 @@ public class CareersPage : GlobalPage
     {
         List<string> dataList = new List<string>(data.Split(','));
 
-        for (int i = 0; i <= 4; i++)
+        for (int i = 0; i <= dataList.Count-1; i++)
         {
             string index = (i + 1).ToString();
             string cssSelector = $"[for*='cf-{index}']";

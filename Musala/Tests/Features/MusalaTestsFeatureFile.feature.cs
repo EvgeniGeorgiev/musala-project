@@ -72,12 +72,13 @@ namespace Musala.Tests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify invalid email address validation on Contact Us page")]
-        [NUnit.Framework.TestCaseAttribute("Email:The e-mail address entered is invalid.", null)]
-        public void VerifyInvalidEmailAddressValidationOnContactUsPage(string errorMessage, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Email:The e-mail address entered is invalid.", "Name,invalid@email,02,Subject,Message", null)]
+        public void VerifyInvalidEmailAddressValidationOnContactUsPage(string errorMessage, string data, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Error Message", errorMessage);
+            argumentsOfScenario.Add("Data", data);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify invalid email address validation on Contact Us page", null, tagsOfScenario, argumentsOfScenario, featureTags);
             this.ScenarioInitialize(scenarioInfo);
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -89,7 +90,7 @@ namespace Musala.Tests.Features
                 this.ScenarioStart();
                 testRunner.Given("the user is on the landing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
                 testRunner.When("the user goes to Contact Us from the landing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-                testRunner.And("the user populates the Contact Us dialog with wrong email data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                testRunner.When(string.Format("the user populates Apply For form with \'{0}\'", data), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
                 testRunner.And("the user clicks the Send button in the Contact Us dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
                 testRunner.Then(string.Format("an error messages for \'{0}\' appear in the dialog", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             }

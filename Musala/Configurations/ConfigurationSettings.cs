@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.Configuration;
 
 public class ConfigurationSettings
 {

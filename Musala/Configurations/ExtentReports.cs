@@ -1,7 +1,6 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 
-
 public class ExtentManager
 {
     private static ExtentReports extent;

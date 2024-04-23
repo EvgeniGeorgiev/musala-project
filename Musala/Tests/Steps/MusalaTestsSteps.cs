@@ -1,11 +1,6 @@
-﻿using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
-using NUnit.Framework;
-using NUnit.Framework.Legacy;
-using OpenQA.Selenium;
+﻿using NUnit.Framework.Legacy;
 using System.Data;
-using System.Net.Mail;
 using TechTalk.SpecFlow;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 [Binding]
 public class MusalaTestSteps
@@ -37,13 +32,6 @@ public class MusalaTestSteps
         _landingPageInteractions.ClickOnContactUs();
     }
 
-
-    [When(@"the user populates the Contact Us dialog with wrong email data")]
-    public void TheUserPopulatesTheContactUsDialogWithWrongEmailData()
-    {
-        _landingPageInteractions.PopulateContactUsDialogWithWrongEmailData();
-    }
-
     [When(@"the user clicks the Send button in the Contact Us dialog")]
     public void TheUserClicksTheSendButtonInTheContactUsDialog()
     {
@@ -51,7 +39,6 @@ public class MusalaTestSteps
         Thread.Sleep(5000);
     }
 
-    //ToDo
     [Then(@"an error message '(.*)' appears in the Contact Us dialog")]
     public void AnErrorMessageAppearsInTheContactUsDialog(string expectedErrorMessage)
     {

@@ -1,6 +1,4 @@
 ﻿
-
-
 public class GlobalPageInteractions(GlobalPage globalPage)
 {
     private readonly GlobalPage _globalPage = globalPage;

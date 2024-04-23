@@ -1,9 +1,7 @@
 ﻿using AventStack.ExtentReports;
-using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using System.Configuration;
 using TechTalk.SpecFlow;
 using static ConfigurationSettings;
 
@@ -16,8 +14,6 @@ public class Hooks
     private static IWebDriver driver;
     private static ExtentReports extent;
     private static ExtentTest test;
-    //ExtentReports extent = ExtentManager.GetExtent();
-    //ExtentTest test;
 
     public Hooks(ScenarioContext scenarioContext)
     {

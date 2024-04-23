@@ -1,7 +1,5 @@
 ﻿Feature: Musala Tests
-
-
-#For Test Case 1 – prepare a test data file in a format of your choice, the file must contain 5 sets of invalid e-mail addresses. Implement the test to run 5 times with each e-mail address.
+#ToDo: For Test Case 1 – prepare a test data file in a format of your choice, the file must contain 5 sets of invalid e-mail addresses. Implement the test to run 5 times with each e-mail address.
 
 
 ######
@@ -9,13 +7,13 @@ Scenario Outline: Verify invalid email address validation on Contact Us page
 
 Given the user is on the landing page
 When the user goes to Contact Us from the landing page
-And the user populates the Contact Us dialog with wrong email data
+When the user populates Apply For form with '<Data>'
 And the user clicks the Send button in the Contact Us dialog
 Then an error messages for '<Error Message>' appear in the dialog
 
     Examples:
-    |Error Message| 
-    |Email:The e-mail address entered is invalid. | 
+    | Error Message                                | Data                                   |
+    | Email:The e-mail address entered is invalid. | Name,invalid@email,02,Subject,Message  |
 
 
 Scenario Outline: Verify Leadership section and company Facebook page link

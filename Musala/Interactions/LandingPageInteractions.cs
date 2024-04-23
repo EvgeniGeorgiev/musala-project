@@ -1,9 +1,4 @@
-﻿
-
-using NUnit.Framework.Legacy;
-using System;
-
-public class LandingPageInteractions(LandingPage landingPage)
+﻿public class LandingPageInteractions(LandingPage landingPage)
 {
     private readonly LandingPage _landingPage = landingPage;
 
@@ -25,10 +20,5 @@ public class LandingPageInteractions(LandingPage landingPage)
     internal string GetDialogErrorMessageFromTheContactUsDialog()
     {
         return _landingPage.GetDialogErrorMessageFromTheContactUsDialog();
-    }
-
-    internal void PopulateContactUsDialogWithWrongEmailData()
-    {
-        _landingPage.PopulateContactUsDialogWithWrongEmailData();
     }
 }

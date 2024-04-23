@@ -1,19 +1,19 @@
 {
   "emails": [
     {
-      "email": "email1@email"
+      "email1": "email1@email"
     },
     {
-      "email": "email2@email"
+      "email2": "email2@email"
     },
     {
-      "email": "email3@email"
+      "email3": "email3@email"
     },
     {
-      "email": "email4@email"
+      "email4": "email4@email"
     },
     {
-      "email": "email5@email"
+      "email5": "email5@email"
     }
   ]
 }

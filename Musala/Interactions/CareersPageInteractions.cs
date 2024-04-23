@@ -1,13 +1,4 @@
 ﻿
-
-using NUnit.Framework.Legacy;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium;
-using System;
-using TechTalk.SpecFlow;
-using System.Collections.Generic;
-using System.Reflection;
-
 public class CareersPageInteractions(CareersPage careersPage, JobListingData jobListingData)
 {
     private readonly CareersPage _careersPage = careersPage;
