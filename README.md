@@ -86,3 +86,17 @@ Position: ...........
 More info: ........... 
 ........... 
 ```
+
+## Setup and Usage
+
+- In Config.json use "Browser": "chrome" or "Browser": "firefox" to select a browser.
+- In Config.json change "BaseUrl" to config the default url.
+- Features with tag @parallel will run in parallel.
+
+## Dependencies
+
+---
+
+## Contributors
+
+Evgeni Georgiev
