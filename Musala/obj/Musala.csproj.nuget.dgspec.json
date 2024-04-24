@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Work\\Musala\\Musala\\Musala\\Musala.csproj": {}
+    "D:\\Work\\MusalaSoft\\QA_MUSALA_SITE-1c5e6bb2-2abe-14c2-3d60-2f21142825dc\\Musala\\Musala.csproj": {}
   },
   "projects": {
-    "D:\\Work\\Musala\\Musala\\Musala\\Musala.csproj": {
+    "D:\\Work\\MusalaSoft\\QA_MUSALA_SITE-1c5e6bb2-2abe-14c2-3d60-2f21142825dc\\Musala\\Musala.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Work\\Musala\\Musala\\Musala\\Musala.csproj",
+        "projectUniqueName": "D:\\Work\\MusalaSoft\\QA_MUSALA_SITE-1c5e6bb2-2abe-14c2-3d60-2f21142825dc\\Musala\\Musala.csproj",
         "projectName": "Musala",
-        "projectPath": "D:\\Work\\Musala\\Musala\\Musala\\Musala.csproj",
+        "projectPath": "D:\\Work\\MusalaSoft\\QA_MUSALA_SITE-1c5e6bb2-2abe-14c2-3d60-2f21142825dc\\Musala\\Musala.csproj",
         "packagesPath": "C:\\Users\\Evgeni\\.nuget\\packages\\",
-        "outputPath": "D:\\Work\\Musala\\Musala\\Musala\\obj\\",
+        "outputPath": "D:\\Work\\MusalaSoft\\QA_MUSALA_SITE-1c5e6bb2-2abe-14c2-3d60-2f21142825dc\\Musala\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Evgeni\\AppData\\Roaming\\NuGet\\NuGet.Config",
