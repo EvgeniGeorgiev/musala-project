@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dQkcJrA2wV7qOYO7JSNkl4AVDDJXXHMAXCFTaBPnFcU8mtNfg8WnfGUzTbCKVKGeN/EAVlAkfmndpKJciwcA8Q==",
+  "dgSpecHash": "2zWHeR9Dl3QfiABQq0O9XS64gf+jQJXYIrNwjbHajhEMySRJ4GdEVLXBJTM/lL9DLHEalONmRasM3TBpLsGbbg==",
   "success": true,
-  "projectFilePath": "D:\\Work\\Musala\\Musala\\Musala\\Musala.csproj",
+  "projectFilePath": "D:\\Work\\MusalaSoft\\QA_MUSALA_SITE-1c5e6bb2-2abe-14c2-3d60-2f21142825dc\\Musala\\Musala.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Evgeni\\.nuget\\packages\\anglesharp\\1.0.4\\anglesharp.1.0.4.nupkg.sha512",
     "C:\\Users\\Evgeni\\.nuget\\packages\\bodi\\1.5.0\\bodi.1.5.0.nupkg.sha512",
